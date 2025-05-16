@@ -30,9 +30,9 @@ export class UserService {
 
    login(user: loginForm): Observable<any> {
     //https://192.168.1.86:3033/usuario/login
-    
     return this.http.post(`${restendpoint.base}${restendpoint.auth.login}`, user)
-   }
+    
+  }
    logout(): Observable<any> {
     return this.http.post(`${restendpoint.base}${restendpoint.auth.logout}`,{});
    }

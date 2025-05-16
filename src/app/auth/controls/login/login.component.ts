@@ -96,8 +96,12 @@ export class LoginComponent {
     }
 
     this.loading = true;
-    this.subscription = this._userService.login(usuario).subscribe({
+    //borrar en produccion
+    this.router.navigate(['dashboard/main'])
+    ///////
+    /*this.subscription = this._userService.login(usuario).subscribe({
       next: (payload:any) => {//respuesta del servidor
+        console.log(payload)
         //habilitar un spinner
         this.loading = false
 
@@ -113,7 +117,7 @@ export class LoginComponent {
         
         console.log('Login completado satisfactoriamente')
       },
-    })
+    })*/
   }
   register(){
     this.router.navigate(['autenticar/registrar'])
