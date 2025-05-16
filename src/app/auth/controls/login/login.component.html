@@ -1,0 +1,64 @@
+<div class="iphonex">
+    <div class="apps">
+      <div class="mybody" >
+      </div>
+            <!--<div class="app1" (click)="openYesNoDialog()" ></div>-->
+            <!--<div class="app2" (click)="openDataDialog()"></div>-->
+            <ng-template #bottomsheetcard>
+              <!--<app-glasscard></app-glasscard>-->
+              <!--<app-mytemplatebottom [msg]="message"></app-mytemplatebottom>-->
+              botomsheetcard
+             
+              
+            </ng-template>
+            
+            <section [formGroup]="form.formGroup" >
+              <mat-card id="card" style="text-align: center; padding: 30px;">
+                  <mat-card-title>
+                      Ingrese sus Credenciales
+                  </mat-card-title>
+              
+                  <mat-card-content style="margin-top: 20px;">
+              
+                      <mat-form-field >
+                          <input matInput  placeholder="email" [formControlName]="form.formControlNames.email" autocomplete="off" >
+                          
+                      </mat-form-field>
+              
+                      <mat-form-field >
+                          <input matInput placeholder="password" [formControlName]="form.formControlNames.password" autocomplete="off">
+                      </mat-form-field>
+                      
+              </mat-card-content>
+              <mat-card-actions>
+                @if(loading){
+                  <div class="spinner__loading">
+                    <div>
+                      <mat-progress-spinner
+                        diameter="60"
+                        
+                        mode="indeterminate">
+                        </mat-progress-spinner>
+                    </div>
+                  </div>
+  
+                }@else{
+                  <button mat-stroked-button color="primary" style="width : 5.0em; font-size: 12px; color: #000;" (click)="login()">Accede</button>
+                  <button mat-stroked-button color="primary" style="width : 5.8em; font-size: 12px; color: #000;" (click)="register()">Regístrate</button>
+                
+                }
+                
+  
+                  <!--<button mat-stroked-button color="primary"  (click)="login()">Accede</button>-->
+                  <!--<button mat-stroked-button color="primary" (click)="register()">Regístrate</button>-->
+                  
+                  
+              
+              </mat-card-actions>
+             
+              </mat-card>
+              
+          </section>
+    </div>
+  </div>
+  
